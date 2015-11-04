@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Hello, World!</name>
+    <author>John Doe</author>
+    <version>1.0.0</version>
+    <description>A simple Hello, World! module.</description>
+    <files>
+        <filename>hello.xml</filename>
+        <filename module="mod_hello">mod_hello.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>sql/mysql/install.mysql.utf8.sql</filename>
+        <filename>sql/mysql/uninstall.mysql.utf8.sql</filename>
+    </files>
+    <config>
+    </config>
+    
+    <install>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/install.mysql.utf8.sql</file>
+         <file driver="sqlazure" charset="utf8">sql/sqlazure/install.sqlazure.utf8.sql</file>
+     </sql>
+</install>
+ 
+<uninstall>
+     <sql>
+         <file driver="mysql" charset="utf8">sql/mysql/uninstall.mysql.utf8.sql</file>
+         <file driver="sqlazure" charset="utf8">sql/sqlazure/uninstall.sqlazure.utf8.sql</file>
+     </sql>
+</uninstall>
+ 
+</extension>
